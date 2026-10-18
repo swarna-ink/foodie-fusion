@@ -1,0 +1,102 @@
+/* ==========================================================
+   This file only contains styles that Tailwind's utility
+   classes can't handle on their own (custom cursor, smooth
+   scrolling, and the scroll-reveal animation).
+   ========================================================== */
+
+/* Smooth scrolling when clicking a nav link */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set the base font for the whole page */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ==========================================================
+   Custom Cursor styles
+   ========================================================== */
+
+/* By default the cursor circle is small and invisible */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; /* makes it a circle */
+  background-color: #c19d6c;
+  pointer-events: none; /* so it never blocks clicks/hovers */
+  z-index: 9999;
+  opacity: 0; /* hidden until we hover the target section */
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease,
+    background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* JavaScript adds this class when hovering the "Book a Table" section */
+#custom-cursor.cursor-active {
+  width: 90px;
+  height: 90px;
+  opacity: 1;
+  background-color: rgba(193, 157, 108, 0.9);
+}
+
+/* The "BOOK" text inside the cursor only appears when active */
+#custom-cursor::after {
+  content: "BOOK";
+  color: #1c1c1c;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#custom-cursor.cursor-active::after {
+  opacity: 1;
+}
+
+/* Hide the normal cursor inside the section where the custom cursor works */
+#book-table-section {
+  cursor: none;
+}
+
+/* Smooth cross-fade transition for the hero slider images */
+.hero-slide {
+  transition: opacity 1.2s ease-in-out;
+}
+
+/* ==========================================================
+   Scroll Reveal Animation
+   Elements start slightly lower and transparent, then
+   fade in and slide up into place as you scroll to them.
+   JavaScript adds the "reveal-visible" class at the right time.
+   ========================================================== */
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-on-scroll.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger the animation slightly for grid items so they don't all
+   pop in at exactly the same time — makes the effect feel smoother */
+.reveal-on-scroll:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.reveal-on-scroll:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.reveal-on-scroll:nth-child(4) {
+  transition-delay: 0.3s;
+}

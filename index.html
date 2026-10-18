@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Savory | Health Food Home (Practice)</title>
+
+  <!-- Google Fonts (used for headings and body text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome icons (from CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <!-- Step 1: Load the Tailwind CDN script first -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Step 2: Then load our custom color/font config (this order matters!) -->
+  <script src="js/tailwind.config.js"></script>
+
+  <!-- Our own CSS file -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream font-body text-dark">
+
+  <!-- ============================================================
+       Custom cursor (invisible by default, only shows up when
+       hovering the "Book a Table" section)
+       ============================================================ -->
+  <div id="custom-cursor"></div>
+
+  <!-- ============================================================
+       Header / Navbar
+       ============================================================ -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-dark/95 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
+
+      <!-- Logo (made with text here, could also be an image) -->
+      <a href="#" class="font-heading text-2xl text-white tracking-wide">
+        Sa<span class="text-primary">vory</span>
+      </a>
+
+      <!-- Desktop menu (hidden on small screens) -->
+      <nav class="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider text-white">
+        <a href="#home" class="hover:text-primary transition-colors">Home</a>
+        <a href="#starters" class="hover:text-primary transition-colors">Starters</a>
+        <a href="#book-table-section" class="hover:text-primary transition-colors">Book Table</a>
+        <a href="#main-meals" class="hover:text-primary transition-colors">Main Meals</a>
+        <a href="#testimonials" class="hover:text-primary transition-colors">Reviews</a>
+        <a href="#footer" class="hover:text-primary transition-colors">Contact</a>
+      </nav>
+
+      <!-- Mobile hamburger button -->
+      <button id="menu-button" class="md:hidden text-white text-2xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile menu (hidden by default, shown when the button is clicked) -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-dark px-6 pb-6 flex flex-col gap-4 text-white uppercase text-sm tracking-wider">
+      <a href="#home" class="hover:text-primary">Home</a>
+      <a href="#starters" class="hover:text-primary">Starters</a>
+      <a href="#book-table-section" class="hover:text-primary">Book Table</a>
+      <a href="#main-meals" class="hover:text-primary">Main Meals</a>
+      <a href="#testimonials" class="hover:text-primary">Reviews</a>
+      <a href="#footer" class="hover:text-primary">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       Hero Section (image slider)
+       ============================================================ -->
+  <section id="home" class="relative h-screen w-full overflow-hidden">
+
+    <!-- Slide 1 -->
+    <div class="hero-slide absolute inset-0 opacity-100 transition-opacity">
+      <img src="https://picsum.photos/id/292/1600/900" class="w-full h-full object-cover" alt="Fresh Restaurant" />
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+        <p class="text-primary uppercase tracking-[4px] mb-4">Fresh &amp; Healthy</p>
+        <h1 class="font-heading text-white text-4xl md:text-6xl mb-4">Fresh Restaurant</h1>
+        <p class="text-white/80 max-w-xl mb-8">Delicious food made every day with fresh ingredients, prepared with the same care as your own kitchen</p>
+        <a href="#starters" class="border border-primary text-primary px-8 py-3 uppercase tracking-wider hover:bg-primary hover:text-dark transition-colors">View Our Menu</a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity">
+      <img src="https://picsum.photos/id/1080/1600/900" class="w-full h-full object-cover" alt="Traditional Food" />
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+        <p class="text-primary uppercase tracking-[4px] mb-4">Traditional Recipes</p>
+        <h1 class="font-heading text-white text-4xl md:text-6xl mb-4">Traditional Food</h1>
+        <p class="text-white/80 max-w-xl mb-8">A mix of old-fashioned recipes and new flavors baked into every one of our special dishes</p>
+        <a href="#starters" class="border border-primary text-primary px-8 py-3 uppercase tracking-wider hover:bg-primary hover:text-dark transition-colors">View Our Menu</a>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity">
+      <img src="https://picsum.photos/id/431/1600/900" class="w-full h-full object-cover" alt="Authentic Dishes" />
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+        <p class="text-primary uppercase tracking-[4px] mb-4">Authentic Taste</p>
+        <h1 class="font-heading text-white text-4xl md:text-6xl mb-4">Authentic Dishes</h1>
+        <p class="text-white/80 max-w-xl mb-8">Every plate comes with a guarantee of authentic flavor, made by hand by our own chefs</p>
+        <a href="#starters" class="border border-primary text-primary px-8 py-3 uppercase tracking-wider hover:bg-primary hover:text-dark transition-colors">View Our Menu</a>
+      </div>
+    </div>
+
+    <!-- Slider dots (small round buttons at the bottom, click to change slide) -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-10">
+      <button class="hero-dot w-3 h-3 rounded-full bg-primary"></button>
+      <button class="hero-dot w-3 h-3 rounded-full bg-white/50"></button>
+      <button class="hero-dot w-3 h-3 rounded-full bg-white/50"></button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       "Our Starters" Section
+       ============================================================ -->
+  <section id="starters" class="max-w-7xl mx-auto px-6 py-24">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal-on-scroll">
+      <p class="text-primary uppercase tracking-[3px] mb-3 text-sm">Tasty and Crunchy</p>
+      <h2 class="font-heading text-4xl mb-4">Our Starters</h2>
+      <p class="text-dark/60">Start your meal off light and delicious — try one of our hand-picked starters.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- One menu card (the same structure is repeated below) -->
+      <div class="group text-center reveal-on-scroll">
+        <div class="overflow-hidden rounded-full w-40 h-40 mx-auto mb-5">
+          <img src="https://picsum.photos/id/1080/300/300" alt="Mussels Soup" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <h3 class="font-heading text-lg mb-1">Mussels Soup</h3>
+        <p class="text-primary font-semibold mb-2">$ 23.00</p>
+        <p class="text-sm text-dark/50">Made with fresh mussels and fragrant spices.</p>
+      </div>
+
+      <div class="group text-center reveal-on-scroll">
+        <div class="overflow-hidden rounded-full w-40 h-40 mx-auto mb-5">
+          <img src="https://picsum.photos/id/1074/300/300" alt="Italian Spaghetti" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <h3 class="font-heading text-lg mb-1">Italian Spaghetti</h3>
+        <p class="text-primary font-semibold mb-2">$ 12.00</p>
+        <p class="text-sm text-dark/50">Classic spaghetti tossed in an Italian sauce.</p>
+      </div>
+
+      <div class="group text-center reveal-on-scroll">
+        <div class="overflow-hidden rounded-full w-40 h-40 mx-auto mb-5">
+          <img src="https://picsum.photos/id/1078/300/300" alt="Beef Burger" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <h3 class="font-heading text-lg mb-1">Beef Burger</h3>
+        <p class="text-primary font-semibold mb-2">$ 10.00</p>
+        <p class="text-sm text-dark/50">A juicy beef patty with fresh vegetables.</p>
+      </div>
+
+      <div class="group text-center reveal-on-scroll">
+        <div class="overflow-hidden rounded-full w-40 h-40 mx-auto mb-5">
+          <img src="https://picsum.photos/id/292/300/300" alt="Stuffed Strawberry" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <h3 class="font-heading text-lg mb-1">Stuffed Strawberry</h3>
+        <p class="text-primary font-semibold mb-2">$ 15.00</p>
+        <p class="text-sm text-dark/50">A light dessert-style starter made with sweet strawberries.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       "Book a Table" Section — this is where the custom cursor works
+       ============================================================ -->
+  <section
+    id="book-table-section"
+    class="relative h-[60vh] flex items-center justify-center text-center px-6"
+  >
+    <img
+      src="https://picsum.photos/id/431/1600/700"
+      class="absolute inset-0 w-full h-full object-cover"
+      alt="Book a table background"
+    />
+    <div class="absolute inset-0 bg-dark/70"></div>
+
+    <div class="relative z-10 max-w-2xl reveal-on-scroll">
+      <p class="text-primary uppercase tracking-[3px] mb-3 text-sm">Tasty and Crunchy</p>
+      <h2 class="font-heading text-white text-4xl mb-4">Book a Table</h2>
+      <p class="text-white/70 mb-8">
+        Move your mouse anywhere over this section — instead of the normal cursor, you'll see a round custom cursor follow it.
+      </p>
+      <a href="#footer" class="bg-primary text-dark px-8 py-3 uppercase tracking-wider font-medium">Book Now</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       "Our Main Meals" Section
+       ============================================================ -->
+  <section id="main-meals" class="max-w-7xl mx-auto px-6 py-24">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal-on-scroll">
+      <p class="text-primary uppercase tracking-[3px] mb-3 text-sm">Tasty and Crunchy</p>
+      <h2 class="font-heading text-4xl mb-4">Our Main Meals</h2>
+      <p class="text-dark/60">Filling and satisfying — both at once, straight from our main course menu.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <div class="group text-center reveal-on-scroll">
+        <div class="overflow-hidden rounded-full w-40 h-40 mx-auto mb-5">
+          <img src="https://picsum.photos/id/1059/300/300" alt="Roast Chicken" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <h3 class="font-heading text-lg mb-1">Roast Chicken</h3>
+        <p class="text-primary font-semibold mb-2">$ 22.00</p>
+        <p class="text-sm text-dark/50">Chicken marinated in herbs and roasted to perfection.</p>
+      </div>
+
+      <div class="group text-center reveal-on-scroll">
+        <div class="overflow-hidden rounded-full w-40 h-40 mx-auto mb-5">
+          <img src="https://picsum.photos/id/1084/300/300" alt="Grilled Fish" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <h3 class="font-heading text-lg mb-1">Grilled Fish</h3>
+        <p class="text-primary font-semibold mb-2">$ 36.00</p>
+        <p class="text-sm text-dark/50">Fresh fish grilled over charcoal with a hint of lemon.</p>
+      </div>
+
+      <div class="group text-center reveal-on-scroll">
+        <div class="overflow-hidden rounded-full w-40 h-40 mx-auto mb-5">
+          <img src="https://picsum.photos/id/312/300/300" alt="Seafood Salad" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <h3 class="font-heading text-lg mb-1">Seafood Salad</h3>
+        <p class="text-primary font-semibold mb-2">$ 17.00</p>
+        <p class="text-sm text-dark/50">A light salad made with fresh seafood.</p>
+      </div>
+
+      <div class="group text-center reveal-on-scroll">
+        <div class="overflow-hidden rounded-full w-40 h-40 mx-auto mb-5">
+          <img src="https://picsum.photos/id/365/300/300" alt="Sicilian Meatballs" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <h3 class="font-heading text-lg mb-1">Sicilian Meatballs</h3>
+        <p class="text-primary font-semibold mb-2">$ 25.00</p>
+        <p class="text-sm text-dark/50">Meatballs cooked Sicilian-style in a rich tomato sauce.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       "What People Say" — Testimonials Section
+       ============================================================ -->
+  <section id="testimonials" class="bg-dark py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal-on-scroll">
+        <p class="text-primary uppercase tracking-[3px] mb-3 text-sm">Tasty and Crunchy</p>
+        <h2 class="font-heading text-4xl text-white mb-4">What People Say</h2>
+        <p class="text-white/50">Take a look at what our customers have to say about their experience.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div class="bg-white/5 p-8 rounded-lg text-center reveal-on-scroll">
+          <p class="text-white/70 italic mb-6">"The atmosphere is as beautiful as the food is delicious. You can taste the care in every single dish."</p>
+          <img src="https://picsum.photos/id/64/80/80" class="w-14 h-14 rounded-full mx-auto mb-3 object-cover" alt="Marco Williams" />
+          <h4 class="text-white font-heading">Marco Williams</h4>
+          <p class="text-primary text-xs uppercase tracking-wider">Founder</p>
+        </div>
+
+        <div class="bg-white/5 p-8 rounded-lg text-center reveal-on-scroll">
+          <p class="text-white/70 italic mb-6">"The service is warm and fast. Don't skip the dessert menu, it's an absolute must-try."</p>
+          <img src="https://picsum.photos/id/91/80/80" class="w-14 h-14 rounded-full mx-auto mb-3 object-cover" alt="Sofia Mayer" />
+          <h4 class="text-white font-heading">Sofia Mayer</h4>
+          <p class="text-primary text-xs uppercase tracking-wider">Founder</p>
+        </div>
+
+        <div class="bg-white/5 p-8 rounded-lg text-center reveal-on-scroll">
+          <p class="text-white/70 italic mb-6">"Took the whole family, and everyone found something they loved. We'll definitely be back."</p>
+          <img src="https://picsum.photos/id/177/80/80" class="w-14 h-14 rounded-full mx-auto mb-3 object-cover" alt="Marta Williams" />
+          <h4 class="text-white font-heading">Marta Williams</h4>
+          <p class="text-primary text-xs uppercase tracking-wider">Founder</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       "Our Desserts" Section
+       ============================================================ -->
+  <section id="desserts" class="max-w-7xl mx-auto px-6 py-24">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal-on-scroll">
+      <p class="text-primary uppercase tracking-[3px] mb-3 text-sm">Tasty and Crunchy</p>
+      <h2 class="font-heading text-4xl mb-4">Our Desserts</h2>
+      <p class="text-dark/60">End your meal on a sweet note — try one of our handmade desserts.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <div class="group text-center reveal-on-scroll">
+        <div class="overflow-hidden rounded-full w-40 h-40 mx-auto mb-5">
+          <img src="https://picsum.photos/id/225/300/300" alt="Chocolate Cake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <h3 class="font-heading text-lg mb-1">Chocolate Cake</h3>
+        <p class="text-primary font-semibold mb-2">$ 18.00</p>
+        <p class="text-sm text-dark/50">A soft, sweet cake made with rich dark chocolate.</p>
+      </div>
+
+      <div class="group text-center reveal-on-scroll">
+        <div class="overflow-hidden rounded-full w-40 h-40 mx-auto mb-5">
+          <img src="https://picsum.photos/id/163/300/300" alt="Fruit Tart" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <h3 class="font-heading text-lg mb-1">Fruit Tart</h3>
+        <p class="text-primary font-semibold mb-2">$ 14.00</p>
+        <p class="text-sm text-dark/50">A creamy tart topped with fresh seasonal fruit.</p>
+      </div>
+
+      <div class="group text-center reveal-on-scroll">
+        <div class="overflow-hidden rounded-full w-40 h-40 mx-auto mb-5">
+          <img src="https://picsum.photos/id/1043/300/300" alt="Ice Cream" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <h3 class="font-heading text-lg mb-1">Ice Cream</h3>
+        <p class="text-primary font-semibold mb-2">$ 9.00</p>
+        <p class="text-sm text-dark/50">Homemade creamy ice cream in a variety of flavors.</p>
+      </div>
+
+      <div class="group text-center reveal-on-scroll">
+        <div class="overflow-hidden rounded-full w-40 h-40 mx-auto mb-5">
+          <img src="https://picsum.photos/id/108/300/300" alt="Lemon Pie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <h3 class="font-heading text-lg mb-1">Lemon Pie</h3>
+        <p class="text-primary font-semibold mb-2">$ 13.00</p>
+        <p class="text-sm text-dark/50">A crisp pie filled with a sweet-and-sour lemon filling.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Footer
+       ============================================================ -->
+  <footer id="footer" class="bg-dark text-white/70 pt-20 pb-8 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+
+      <div>
+        <h3 class="font-heading text-2xl text-white mb-4">Sa<span class="text-primary">vory</span></h3>
+        <p class="text-sm leading-relaxed">
+          We bring you food made with fresh, everyday ingredients and a lot of care — a little bit of love on every plate.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-white uppercase tracking-wider text-sm mb-4">Contact</h4>
+        <p class="text-sm mb-2"><i class="fa-solid fa-phone text-primary mr-2"></i> +1 234 567 8900</p>
+        <p class="text-sm mb-2"><i class="fa-solid fa-envelope text-primary mr-2"></i> hello@savory.com</p>
+        <p class="text-sm"><i class="fa-solid fa-location-dot text-primary mr-2"></i> Eighth Avenue 487, New York</p>
+      </div>
+
+      <div>
+        <h4 class="text-white uppercase tracking-wider text-sm mb-4">Follow Us</h4>
+        <div class="flex gap-4 text-lg">
+          <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/10 pt-6 text-center text-xs text-white/40">
+      © 2026 Savory — practice project, built for learning purposes only
+    </div>
+  </footer>
+
+  <!-- Our own JavaScript file (loaded last, so all the HTML above is ready first) -->
+  <script src="js/script.js"></script>
+</body>
+</html>
